@@ -1,0 +1,36 @@
+{
+  "name": "ngx-repeat",
+  "version": "1.0.25",
+  "author": {
+    "name": "Dominik Hladík",
+    "email": "dominik.hladik@seznam.cz",
+    "url": "https://github.com/Celtian"
+  },
+  "private": false,
+  "license": "MIT",
+  "description": "Angular directive for repeating HTML element by count",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/Celtian/ngx-repeat",
+  "repository": {
+    "url": "git+https://github.com/Celtian/ngx-repeat.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/Celtian/ngx-repeat/issues"
+  },
+  "keywords": [
+    "angular",
+    "repeat",
+    "loop",
+    "loop",
+    "ngx"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
+}
