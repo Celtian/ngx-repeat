@@ -1,3 +1,42 @@
+import { Component, NO_ERRORS_SCHEMA, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxRepeatDirective, RepeatDirectiveContext } from './ngx-repeat.directive';
+
+describe('NgxRepeatDirective', () => {
+  let fixture: ComponentFixture<TestDirectiveComponent>;
+  let templateRef: jasmine.SpyObj<TemplateRef<RepeatDirectiveContext>>;
+  let viewContainer: jasmine.SpyObj<ViewContainerRef>;
+
+  @Component({
+    template: '<div *ngxRepeat="3;let index = index;">{{ index }}</div>'
+  })
+  class TestDirectiveComponent {
+    @ViewChild(NgxRepeatDirective) public directive: NgxRepeatDirective;
+  }
+
+  beforeEach(() => {
+    templateRef = jasmine.createSpyObj('TemplateRef<RepeatDirectiveContext>', []);
+    viewContainer = jasmine.createSpyObj('ViewContainerRef', []);
+
+    fixture = TestBed.configureTestingModule({
+      declarations: [ TestDirectiveComponent, NgxRepeatDirective ],
+      schemas:      [ NO_ERRORS_SCHEMA ],
+      providers: [
+        { provide: TemplateRef, useValue: templateRef },
+        { provide: ViewContainerRef, useValue: viewContainer },
+      ]
+    }).createComponent(TestDirectiveComponent);
+
+    fixture.detectChanges();
+  });
+
+  it('should create an instance', () => {
+    const directive = new NgxRepeatDirective(templateRef, viewContainer);
+    expect(directive).toBeTruthy();
+  });
+});
+
+
 /*
 import { Component, ElementRef, NO_ERRORS_SCHEMA, Renderer2, ViewChild } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
