@@ -1,10 +1,10 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 /**
  * @publicApi
  */
 export class RepeatDirectiveContext {
-  constructor(public $implicit: number, private count: number) {}
+  constructor(public $implicit: number, public count: number) {}
 
   public get index(): number {
     return this.$implicit;
@@ -15,7 +15,7 @@ export class RepeatDirectiveContext {
   }
 
   public get last(): boolean {
-    return this.$implicit + 1 >= this.count;
+    return this.index === this.count - 1;
   }
 
   public get even(): boolean {
@@ -31,12 +31,16 @@ export class RepeatDirectiveContext {
   selector: '[ngxRepeat]'
 })
 export class NgxRepeatDirective {
-  @Input() public set ngxRepeat(times: number) {
-    let count = this.viewContainer.length;
-    for (let i = this.viewContainer.length; i > times; i--) this.viewContainer.remove(i - 1);
+  @Input() public set ngxRepeat(count: number) {
+    for (let i = this.viewContainer.length; i > count; i--) this.viewContainer.remove(i - 1);
 
-    for (let i = count; i < times; i++)
-      this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, times));
+    for (let i = this.viewContainer.length; i < count; i++)
+      this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, count));
+
+    for (let i = 0; i < this.viewContainer.length; i++) {
+      const viewRef = <EmbeddedViewRef<RepeatDirectiveContext>>this.viewContainer.get(i);
+      viewRef.context.count = count;
+    }
   }
 
   constructor(private templateRef: TemplateRef<RepeatDirectiveContext>, private viewContainer: ViewContainerRef) {}
