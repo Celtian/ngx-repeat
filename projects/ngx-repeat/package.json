@@ -25,10 +25,9 @@
   },
   "keywords": [
     "angular",
-    "repeat",
     "loop",
-    "loop",
-    "ngx"
+    "ngx",
+    "repeat"
   ],
   "engines": {
     "node": ">=10"

@@ -84,9 +84,9 @@
   },
   "keywords": [
     "angular",
-    "repeat",
     "loop",
-    "ngx"
+    "ngx",
+    "repeat"
   ],
   "files": [
     "dist"
