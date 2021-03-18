@@ -23,7 +23,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "create:version": "ts-node --project scripts/tsconfig.ts-node.json scripts/create-version",
-    "postinstall": "yarn create:version",
+    "postinstall": "yarn create:version && husky install",
     "syncprojects": "ts-node --project scripts/tsconfig.ts-node.json scripts/sync-projects",
     "version": "yarn syncprojects && git add projects/ngx-repeat/",
     "postversion": "git push && git push --follow-tags",
