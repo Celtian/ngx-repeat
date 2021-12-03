@@ -46,10 +46,10 @@ yarn add ngx-repeat
 
 ## Compatibility
 
-| Angular   | ngx-if-platform | Install                 |
-| --------- | --------------- | ----------------------- |
-| >= 12     | 1.x             | `yarn add ngx-repeat`   |
-| >= 5 < 13 | 0.x             | `yarn add ngx-repeat@0` |
+| Angular   | ngx-repeat | Install                 |
+| --------- | ---------- | ----------------------- |
+| >= 12     | 1.x        | `yarn add ngx-repeat`   |
+| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
 
 ## Quick start
 
