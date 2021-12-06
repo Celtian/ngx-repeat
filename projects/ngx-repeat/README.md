@@ -14,7 +14,7 @@
 
 > Angular directive for repeating HTML element by count
 
-> ✓ _Angular 12, Ivy and SSR compatible_
+> ✓ _Angular 13, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-repeat) or [codesandbox live preview](https://codesandbox.io/s/ngx-repeat-bew8f)
 
@@ -43,6 +43,13 @@ yarn add ngx-repeat
    ]
   })
 ```
+
+## Compatibility
+
+| Angular   | ngx-repeat | Install                 |
+| --------- | ---------- | ----------------------- |
+| >= 12     | 1.x        | `yarn add ngx-repeat`   |
+| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
 
 ## Quick start
 
