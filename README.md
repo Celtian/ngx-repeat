@@ -6,7 +6,7 @@
 [![npm version](https://badge.fury.io/js/ngx-repeat.svg)](https://badge.fury.io/js/ngx-repeat)
 [![Package License](https://img.shields.io/npm/l/ngx-repeat.svg)](https://www.npmjs.com/ngx-repeat)
 [![NPM Downloads](https://img.shields.io/npm/dm/ngx-repeat.svg)](https://www.npmjs.com/ngx-repeat)
-[![Build & Publish](https://github.com/celtian/ngx-repeat/workflows/Build%20&%20Publish/badge.svg)](https://github.com/celtian/ngx-repeat/actions)
+[![Snyk](https://snyk.io/advisor/npm-package/ngx-repeat/badge.svg)](https://snyk.io/advisor/npm-package/ngx-repeat)
 [![codecov](https://codecov.io/gh/Celtian/ngx-repeat/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-repeat/)
 [![stars](https://badgen.net/github/stars/celtian/ngx-repeat)](https://github.com/celtian/ngx-repeat/)
 [![forks](https://badgen.net/github/forks/celtian/ngx-repeat)](https://github.com/celtian/ngx-repeat/)
@@ -14,7 +14,7 @@
 
 > Angular directive for repeating HTML element by count
 
-> ✓ _Angular 15, Ivy and SSR compatible_
+> ✓ _Angular 16, Ivy and SSR compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-repeat) or [codesandbox live preview](https://codesandbox.io/s/ngx-repeat-bew8f)
 
@@ -33,15 +33,27 @@ yarn add ngx-repeat
 2. Add NgxRepeatModule into your module `imports`
 
 ```typescript
-  import { NgxRepeatModule } from 'ngx-repeat';
+import { NgxRepeatModule } from 'ngx-repeat';
 
-  @NgModule({
+@NgModule({
+ // ...
+ imports: [
    // ...
-   imports: [
-     // ...
-     NgxRepeatModule
-   ]
-  })
+   NgxRepeatModule
+ ]
+})
+```
+
+or
+
+```typescript
+import { NgxRepeatModule } from 'ngx-repeat';
+
+@Component({
+  standalone: true,
+  imports: [NgxRepeatModule /*, ...*/],
+   // ...
+})
 ```
 
 ## Compatibility
