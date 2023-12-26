@@ -4,7 +4,10 @@ import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from
  * @publicApi
  */
 export class RepeatDirectiveContext {
-  constructor(public $implicit: number, public count: number) {}
+  constructor(
+    public $implicit: number,
+    public count: number
+  ) {}
 
   public get index(): number {
     return this.$implicit;
@@ -28,7 +31,8 @@ export class RepeatDirectiveContext {
 }
 
 @Directive({
-  selector: '[ngxRepeat]'
+  selector: '[ngxRepeat]',
+  standalone: true
 })
 export class NgxRepeatDirective {
   @Input() public set ngxRepeat(count: number) {
@@ -43,5 +47,8 @@ export class NgxRepeatDirective {
     }
   }
 
-  constructor(private templateRef: TemplateRef<RepeatDirectiveContext>, private viewContainer: ViewContainerRef) {}
+  constructor(
+    private templateRef: TemplateRef<RepeatDirectiveContext>,
+    private viewContainer: ViewContainerRef
+  ) {}
 }
