@@ -30,7 +30,19 @@ Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live prev
 yarn add ngx-repeat
 ```
 
-2. Add NgxRepeatModule into your module `imports`
+2. Add NgxRepeatDirective into your component`
+
+```typescript
+import { NgxRepeatDirective } from 'ngx-repeat';
+
+@Component({
+  standalone: true,
+  imports: [NgxRepeatDirective /*, ...*/],
+   // ...
+})
+```
+
+or module
 
 ```typescript
 import { NgxRepeatDirective } from 'ngx-repeat';
@@ -41,18 +53,6 @@ import { NgxRepeatDirective } from 'ngx-repeat';
    // ...
    NgxRepeatDirective
  ]
-})
-```
-
-or
-
-```typescript
-import { NgxRepeatDirective } from 'ngx-repeat';
-
-@Component({
-  standalone: true,
-  imports: [NgxRepeatDirective /*, ...*/],
-   // ...
 })
 ```
 
