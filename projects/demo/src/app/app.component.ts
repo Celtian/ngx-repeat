@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { NgxRepeatDirective } from 'projects/ngx-repeat/src/public-api';
 import { VERSION } from '../environments/version';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss',
+  standalone: true,
+  imports: [NgxRepeatDirective]
 })
 export class AppComponent {
   public title = 'ngx-repeat';

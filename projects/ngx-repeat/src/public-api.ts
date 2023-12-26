@@ -3,4 +3,3 @@
  */
 
 export * from './lib/ngx-repeat.directive';
-export * from './lib/ngx-repeat.module';

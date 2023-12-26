@@ -4,14 +4,9 @@ import { NgxRepeatDirective, RepeatDirectiveContext } from './ngx-repeat.directi
 
 describe('NgxRepeatDirective', () => {
   @Component({
-    template: `
-    <div
-      *ngxRepeat="3;
-      let index = index;
-      let even = even;
-      let odd = odd;
-      let first = first;
-      let last = last;">
+    template: ` <div
+      *ngxRepeat="3; let index = index; let even = even; let odd = odd; let first = first; let last = last"
+    >
       {{ index }} {{ even }} {{ odd }} {{ first }} {{ last }}
     </div>`
   })
@@ -38,16 +33,22 @@ describe('NgxRepeatDirective', () => {
   let viewContainer: jasmine.SpyObj<ViewContainerRef>;
 
   beforeEach(() => {
-    templateRef = jasmine.createSpyObj('TemplateRef<RepeatDirectiveContext>',['elementRef', 'createEmbeddedView']);
-    viewContainer = jasmine.createSpyObj('ViewContainerRef', ['length', 'remove', 'createEmbeddedView', 'createComponent']);
+    templateRef = jasmine.createSpyObj('TemplateRef<RepeatDirectiveContext>', ['elementRef', 'createEmbeddedView']);
+    viewContainer = jasmine.createSpyObj('ViewContainerRef', [
+      'length',
+      'remove',
+      'createEmbeddedView',
+      'createComponent'
+    ]);
 
     fixture = TestBed.configureTestingModule({
-      declarations: [ TestDirectiveComponent, NgxRepeatDirective ],
+      imports: [NgxRepeatDirective],
+      declarations: [TestDirectiveComponent],
       providers: [
         { provide: TemplateRef, useValue: templateRef },
-        { provide: ViewContainerRef, useValue: viewContainer },
+        { provide: ViewContainerRef, useValue: viewContainer }
       ]
-    }).createComponent(TestDirectiveComponent)
+    }).createComponent(TestDirectiveComponent);
 
     fixture.detectChanges();
   });

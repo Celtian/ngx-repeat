@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { NgxRepeatModule } from 'projects/ngx-repeat/src/public-api';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -8,12 +7,7 @@ describe('AppComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-      imports: [
-        NgxRepeatModule
-      ]
+      imports: [AppComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -33,7 +27,7 @@ describe('AppComponent', () => {
   it('should increment', () => {
     component.increment();
     fixture.detectChanges();
-    expect(component.count).toBe(4)
+    expect(component.count).toBe(4);
   });
 
   it('should increment limit', () => {
@@ -41,13 +35,13 @@ describe('AppComponent', () => {
       component.increment();
     }
     fixture.detectChanges();
-    expect(component.count).toBe(100)
+    expect(component.count).toBe(100);
   });
 
   it('should decrement', () => {
     component.decrement();
     fixture.detectChanges();
-    expect(component.count).toBe(2)
+    expect(component.count).toBe(2);
   });
 
   it('should decrement limit', () => {
@@ -55,6 +49,6 @@ describe('AppComponent', () => {
       component.decrement();
     }
     fixture.detectChanges();
-    expect(component.count).toBe(0)
+    expect(component.count).toBe(0);
   });
 });

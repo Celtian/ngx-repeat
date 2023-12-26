@@ -14,7 +14,7 @@
 
 > Angular directive for repeating HTML element by count
 
-> ✓ _Angular 16, Ivy and SSR compatible_
+> ✓ _Angular 17 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-repeat) or [codesandbox live preview](https://codesandbox.io/s/ngx-repeat-bew8f)
 
@@ -33,13 +33,13 @@ yarn add ngx-repeat
 2. Add NgxRepeatModule into your module `imports`
 
 ```typescript
-import { NgxRepeatModule } from 'ngx-repeat';
+import { NgxRepeatDirective } from 'ngx-repeat';
 
 @NgModule({
  // ...
  imports: [
    // ...
-   NgxRepeatModule
+   NgxRepeatDirective
  ]
 })
 ```
@@ -47,11 +47,11 @@ import { NgxRepeatModule } from 'ngx-repeat';
 or
 
 ```typescript
-import { NgxRepeatModule } from 'ngx-repeat';
+import { NgxRepeatDirective } from 'ngx-repeat';
 
 @Component({
   standalone: true,
-  imports: [NgxRepeatModule /*, ...*/],
+  imports: [NgxRepeatDirective /*, ...*/],
    // ...
 })
 ```
@@ -60,7 +60,8 @@ import { NgxRepeatModule } from 'ngx-repeat';
 
 | Angular   | ngx-repeat | Install                 |
 | --------- | ---------- | ----------------------- |
-| >= 12     | 1.x        | `yarn add ngx-repeat`   |
+| >= 14     | 2.x        | `yarn add ngx-repeat  ` |
+| >= 12     | 1.x        | `yarn add ngx-repeat@1` |
 | >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
 
 ## Quick start
