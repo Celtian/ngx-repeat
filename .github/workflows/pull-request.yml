@@ -19,7 +19,7 @@ jobs:
       - name: 🛠️ Install
         uses: ./.github/actions/cached-deps
 
-      - name: 🌡️ Lint
+      - name: 🧹 Lint
         run: yarn lint
 
       - name: 🛠️ Sync versions # Sync versions
