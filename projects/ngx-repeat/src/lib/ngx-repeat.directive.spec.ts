@@ -1,10 +1,4 @@
-import {
-  Component,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef,
-  provideExperimentalZonelessChangeDetection
-} from '@angular/core';
+import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgxRepeatDirective, RepeatDirectiveContext } from './ngx-repeat.directive';
 
@@ -35,25 +29,28 @@ describe('NgxRepeatDirective', () => {
   }
 
   let fixture: ComponentFixture<TestDirectiveComponent>;
-  let templateRef: jasmine.SpyObj<TemplateRef<RepeatDirectiveContext>>;
-  let viewContainer: jasmine.SpyObj<ViewContainerRef>;
+  let templateRef: jest.Mocked<TemplateRef<RepeatDirectiveContext>>;
+  let viewContainer: jest.Mocked<Partial<ViewContainerRef>>;
 
   beforeEach(() => {
-    templateRef = jasmine.createSpyObj('TemplateRef<RepeatDirectiveContext>', ['elementRef', 'createEmbeddedView']);
-    viewContainer = jasmine.createSpyObj('ViewContainerRef', [
-      'length',
-      'remove',
-      'createEmbeddedView',
-      'createComponent'
-    ]);
+    templateRef = {
+      elementRef: {} as any,
+      createEmbeddedView: jest.fn()
+    };
+
+    viewContainer = {
+      length: 0,
+      remove: jest.fn(),
+      createEmbeddedView: jest.fn(),
+      createComponent: jest.fn()
+    };
 
     fixture = TestBed.configureTestingModule({
       imports: [NgxRepeatDirective],
       declarations: [TestDirectiveComponent],
       providers: [
         { provide: TemplateRef, useValue: templateRef },
-        { provide: ViewContainerRef, useValue: viewContainer },
-        provideExperimentalZonelessChangeDetection()
+        { provide: ViewContainerRef, useValue: viewContainer }
       ]
     }).createComponent(TestDirectiveComponent);
 
@@ -61,7 +58,7 @@ describe('NgxRepeatDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new NgxRepeatDirective(templateRef, viewContainer);
+    const directive = new NgxRepeatDirective(templateRef, viewContainer as ViewContainerRef);
     expect(directive).toBeTruthy();
   });
 });
