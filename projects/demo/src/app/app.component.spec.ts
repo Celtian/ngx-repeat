@@ -1,12 +1,12 @@
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [AppComponent],
       providers: [provideExperimentalZonelessChangeDetection()]
@@ -14,17 +14,17 @@ describe('AppComponent', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-  }));
+  });
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should get github link`, waitForAsync(() => {
+  it(`should get github link`, () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.github-logo').href).toContain('https://github.com/celtian/ngx-repeat');
-  }));
+  });
 
   it('should increment', () => {
     component.increment();
