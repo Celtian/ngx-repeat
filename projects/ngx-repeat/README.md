@@ -22,7 +22,7 @@ Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live prev
 - No dependencies!
 - Directive way
 
-## Install
+## 🛠️ Install
 
 1. Use yarn (or npm) to install the package
 
@@ -56,15 +56,7 @@ import { NgxRepeatDirective } from 'ngx-repeat';
 })
 ```
 
-## Compatibility
-
-| Angular   | ngx-repeat | Install                 |
-| --------- | ---------- | ----------------------- |
-| >= 14     | 2.x        | `yarn add ngx-repeat  ` |
-| >= 12     | 1.x        | `yarn add ngx-repeat@1` |
-| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
-
-## Quick start
+## 🚀 Quick start
 
 ### Example code
 
@@ -89,11 +81,19 @@ import { NgxRepeatDirective } from 'ngx-repeat';
   2 true false false true
 ```
 
-## Dependencies
+## 🔧 Compatibility
+
+| Angular   | ngx-repeat | Install                 |
+| --------- | ---------- | ----------------------- |
+| >= 14     | 2.x        | `yarn add ngx-repeat  ` |
+| >= 12     | 1.x        | `yarn add ngx-repeat@1` |
+| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
+
+## 📦 Dependencies
 
 _None_
 
-## License
+## 🪪 License
 
 Copyright &copy; 2021 - 2024 [Dominik Hladik](https://github.com/Celtian)
 
