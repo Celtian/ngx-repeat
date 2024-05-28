@@ -1,4 +1,4 @@
-import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef, inject } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 /**
  * @publicApi
@@ -35,9 +35,6 @@ export class RepeatDirectiveContext {
   standalone: true
 })
 export class NgxRepeatDirective {
-  private readonly templateRef = inject(TemplateRef<RepeatDirectiveContext>);
-  private readonly viewContainer = inject(ViewContainerRef);
-
   @Input() public set ngxRepeat(count: number) {
     for (let i = this.viewContainer.length; i > count; i--) this.viewContainer.remove(i - 1);
 
@@ -49,4 +46,9 @@ export class NgxRepeatDirective {
       viewRef.context.count = count;
     }
   }
+
+  constructor(
+    private templateRef: TemplateRef<RepeatDirectiveContext>,
+    private viewContainer: ViewContainerRef
+  ) {}
 }

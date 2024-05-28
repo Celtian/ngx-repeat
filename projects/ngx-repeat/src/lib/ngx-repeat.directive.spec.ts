@@ -61,7 +61,7 @@ describe('NgxRepeatDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new NgxRepeatDirective();
+    const directive = new NgxRepeatDirective(templateRef, viewContainer);
     expect(directive).toBeTruthy();
   });
 });
