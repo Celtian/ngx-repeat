@@ -66,7 +66,6 @@
             "index": "projects/demo/src/index.html",
             "browser": "projects/demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/demo/tsconfig.app.json",
             "assets": [

@@ -1,4 +1,10 @@
-import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+  provideExperimentalZonelessChangeDetection
+} from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgxRepeatDirective, RepeatDirectiveContext } from './ngx-repeat.directive';
 
@@ -46,7 +52,8 @@ describe('NgxRepeatDirective', () => {
       declarations: [TestDirectiveComponent],
       providers: [
         { provide: TemplateRef, useValue: templateRef },
-        { provide: ViewContainerRef, useValue: viewContainer }
+        { provide: ViewContainerRef, useValue: viewContainer },
+        provideExperimentalZonelessChangeDetection()
       ]
     }).createComponent(TestDirectiveComponent);
 
