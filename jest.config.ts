@@ -9,7 +9,14 @@ const config: Config = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
   testEnvironment: 'jsdom',
-  testMatch: ['<rootDir>/projects/ngx-repeat/**/*.spec.ts'],
+  testMatch: ['<rootDir>/projects/demo/src/app/**/*.spec.ts', '<rootDir>/projects/ngx-repeat/src/lib/**/*.spec.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/projects/ngx-repeat/src/lib/**/*.ts',
+    '!<rootDir>/projects/ngx-repeat/src/lib/**/index.ts'
+  ],
+  moduleNameMapper: {
+    'projects/ngx-repeat/src/public-api': '<rootDir>/projects/ngx-repeat/src/public-api'
+  },
   transform: {
     '^.+\\.(ts|mjs|js)$': swcAngularJestTransformer(),
     '^.+\\.(html)$': [
