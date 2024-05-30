@@ -22,11 +22,20 @@ jobs:
       - name: 🛠️ Sync versions
         run: yarn script:sync-projects
 
+      - name: 🛠️ Find PR
+        uses: jwalton/gh-find-current-pr@v1
+        id: findPr
+
       - name: 🧹 Lint
         run: yarn lint
 
       - name: 🧪 Run tests
-        run: yarn test:jest
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          prnumber: ${{ steps.findPr.outputs.number }}
+          test_command: yarn test:jest
+          coverage_threshold: 90
+          output: comment, report-markdown
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
