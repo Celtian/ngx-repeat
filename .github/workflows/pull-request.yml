@@ -30,17 +30,18 @@ jobs:
         run: yarn lint
 
       - name: 🧪 Run tests
+        run: yarn test:jest
+
+      - name: 🧪 Create coverage report markdown
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
           prnumber: ${{ steps.findPr.outputs.number }}
-          test-script: yarn test:jest
           threshold: 80
-          package-manager: yarn
-          skip-step: install
+          skip-step: all
           output: report-markdown
 
-      - name: 🧪 Update comment
+      - name: 🧪 Update coverage report comment
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
