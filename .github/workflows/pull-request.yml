@@ -33,8 +33,10 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           prnumber: ${{ steps.findPr.outputs.number }}
-          test_command: yarn test:jest
-          coverage_threshold: 90
+          test-script: yarn test:jest
+          threshold: 90
+          package-manager: yarn
+          skip-step: all
           output: comment, report-markdown
 
       - name: ⬆️ Upload coverage reports
