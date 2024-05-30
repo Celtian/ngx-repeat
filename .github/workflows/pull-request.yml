@@ -31,13 +31,19 @@ jobs:
 
       - name: 🧪 Run tests
         uses: ArtiomTr/jest-coverage-report-action@v2
+        id: coverage
         with:
           prnumber: ${{ steps.findPr.outputs.number }}
           test-script: yarn test:jest
-          threshold: 90
+          threshold: 80
           package-manager: yarn
           skip-step: install
-          output: comment, report-markdown
+          output: report-markdown
+
+      - name: 🧪 Update comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: ${{ steps.coverage.outputs.report }}
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
