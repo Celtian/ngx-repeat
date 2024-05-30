@@ -36,7 +36,7 @@ jobs:
           test-script: yarn test:jest
           threshold: 90
           package-manager: yarn
-          skip-step: all
+          skip-step: install
           output: comment, report-markdown
 
       - name: ⬆️ Upload coverage reports
