@@ -37,6 +37,7 @@ jobs:
         id: coverage
         with:
           prnumber: ${{ steps.findPr.outputs.number }}
+          coverage-file: coverage/coverage-final.json
           threshold: 80
           skip-step: all
           output: report-markdown
