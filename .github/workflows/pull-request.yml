@@ -30,7 +30,7 @@ jobs:
         run: yarn lint
 
       - name: 🧪 Run tests
-        run: yarn test:jest --ci --json --outputFile=report.json
+        run: yarn test:jest --ci --json --outputFile=coverage/report.json
 
       - name: 🧪 Create coverage report markdown
         uses: ArtiomTr/jest-coverage-report-action@v2
