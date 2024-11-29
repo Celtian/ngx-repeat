@@ -42,7 +42,7 @@ export class NgxRepeatDirective {
       this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, count));
 
     for (let i = 0; i < this.viewContainer.length; i++) {
-      const viewRef = <EmbeddedViewRef<RepeatDirectiveContext>>this.viewContainer.get(i);
+      const viewRef = this.viewContainer.get(i) as EmbeddedViewRef<RepeatDirectiveContext>;
       viewRef.context.count = count;
     }
   }

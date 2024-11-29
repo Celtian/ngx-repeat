@@ -8,7 +8,8 @@ describe('NgxRepeatDirective', () => {
       *ngxRepeat="3; let index = index; let even = even; let odd = odd; let first = first; let last = last"
     >
       {{ index }} {{ even }} {{ odd }} {{ first }} {{ last }}
-    </div>`
+    </div>`,
+    standalone: false
   })
   class TestDirectiveComponent {
     @ViewChild(NgxRepeatDirective) public directive: NgxRepeatDirective;
@@ -34,6 +35,7 @@ describe('NgxRepeatDirective', () => {
 
   beforeEach(() => {
     templateRef = {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       elementRef: {} as any,
       createEmbeddedView: jest.fn()
     };

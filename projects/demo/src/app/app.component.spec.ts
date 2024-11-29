@@ -31,6 +31,7 @@ describe('AppComponent', () => {
   });
 
   it('should increment limit', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const i of new Array(100)) {
       component.increment();
     }
@@ -45,6 +46,7 @@ describe('AppComponent', () => {
   });
 
   it('should decrement limit', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const i of new Array(5)) {
       component.decrement();
     }
