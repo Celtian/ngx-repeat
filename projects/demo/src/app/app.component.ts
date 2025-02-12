@@ -5,7 +5,7 @@ import { VERSION } from '../environments/version';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.css',
   standalone: true,
   imports: [NgxRepeatDirective]
 })

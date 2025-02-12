@@ -47,11 +47,6 @@
     },
     "demo": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
       "root": "projects/demo",
       "sourceRoot": "projects/demo/src",
       "prefix": "app",

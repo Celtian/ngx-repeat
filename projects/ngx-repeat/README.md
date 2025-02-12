@@ -85,7 +85,8 @@ import { NgxRepeatDirective } from 'ngx-repeat';
 
 | Angular   | ngx-repeat | Install                 |
 | --------- | ---------- | ----------------------- |
-| >= 14     | 2.x        | `yarn add ngx-repeat  ` |
+| >= 19     | 3.x        | `yarn add ngx-repeat`   |
+| >= 14     | 2.x        | `yarn add ngx-repeat@2` |
 | >= 12     | 1.x        | `yarn add ngx-repeat@1` |
 | >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
 
@@ -95,7 +96,7 @@ _None_
 
 ## 🪪 License
 
-Copyright &copy; 2021 - 2024 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2021 - 2025 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 
