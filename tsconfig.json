@@ -11,7 +11,7 @@
     "isolatedModules": true,
     "paths": {
       "ngx-repeat": [
-        "./dist/ngx-repeat"
+        "./projects/ngx-repeat/src/public-api"
       ]
     },
     "esModuleInterop": true,

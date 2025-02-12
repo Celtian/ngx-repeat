@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgxRepeatDirective } from 'projects/ngx-repeat/src/public-api';
+import { NgxRepeatDirective } from 'ngx-repeat';
 import { VERSION } from '../environments/version';
 
 @Component({
