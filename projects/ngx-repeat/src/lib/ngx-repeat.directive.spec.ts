@@ -12,7 +12,7 @@ describe('NgxRepeatDirective', () => {
     imports: [NgxRepeatDirective]
   })
   class TestDirectiveComponent {
-    @ViewChild(NgxRepeatDirective) public directive: NgxRepeatDirective;
+    @ViewChild(NgxRepeatDirective) public directive?: NgxRepeatDirective;
 
     public count = 3;
 
