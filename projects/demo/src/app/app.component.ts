@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { NgxRepeatDirective } from 'projects/ngx-repeat/src/public-api';
+import { NgxRepeatDirective } from '../../../ngx-repeat/src/public-api';
 import { VERSION } from '../environments/version';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  standalone: true,
+  styleUrl: './app.component.css',
   imports: [NgxRepeatDirective]
 })
 export class AppComponent {

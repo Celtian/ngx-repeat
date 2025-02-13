@@ -1,6 +1,6 @@
-import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgxRepeatDirective, RepeatDirectiveContext } from './ngx-repeat.directive';
+import { NgxRepeatDirective } from './ngx-repeat.directive';
 
 describe('NgxRepeatDirective', () => {
   @Component({
@@ -9,10 +9,10 @@ describe('NgxRepeatDirective', () => {
     >
       {{ index }} {{ even }} {{ odd }} {{ first }} {{ last }}
     </div>`,
-    standalone: false
+    imports: [NgxRepeatDirective]
   })
   class TestDirectiveComponent {
-    @ViewChild(NgxRepeatDirective) public directive: NgxRepeatDirective;
+    @ViewChild(NgxRepeatDirective) public directive?: NgxRepeatDirective;
 
     public count = 3;
 
@@ -30,37 +30,17 @@ describe('NgxRepeatDirective', () => {
   }
 
   let fixture: ComponentFixture<TestDirectiveComponent>;
-  let templateRef: jest.Mocked<TemplateRef<RepeatDirectiveContext>>;
-  let viewContainer: jest.Mocked<Partial<ViewContainerRef>>;
+  let component: TestDirectiveComponent;
 
   beforeEach(() => {
-    templateRef = {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      elementRef: {} as any,
-      createEmbeddedView: jest.fn()
-    };
-
-    viewContainer = {
-      length: 0,
-      remove: jest.fn(),
-      createEmbeddedView: jest.fn(),
-      createComponent: jest.fn()
-    };
-
-    fixture = TestBed.configureTestingModule({
-      imports: [NgxRepeatDirective],
-      declarations: [TestDirectiveComponent],
-      providers: [
-        { provide: TemplateRef, useValue: templateRef },
-        { provide: ViewContainerRef, useValue: viewContainer }
-      ]
-    }).createComponent(TestDirectiveComponent);
-
+    fixture = TestBed.configureTestingModule({ imports: [NgxRepeatDirective, TestDirectiveComponent] }).createComponent(
+      TestDirectiveComponent
+    );
     fixture.detectChanges();
+    component = fixture.componentInstance;
   });
 
   it('should create an instance', () => {
-    const directive = new NgxRepeatDirective(templateRef, viewContainer as ViewContainerRef);
-    expect(directive).toBeTruthy();
+    expect(component.directive).toBeTruthy();
   });
 });

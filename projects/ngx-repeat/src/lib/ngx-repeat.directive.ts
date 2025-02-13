@@ -1,4 +1,4 @@
-import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, EmbeddedViewRef, TemplateRef, ViewContainerRef, effect, inject, input } from '@angular/core';
 
 /**
  * @publicApi
@@ -30,25 +30,24 @@ export class RepeatDirectiveContext {
   }
 }
 
-@Directive({
-  selector: '[ngxRepeat]',
-  standalone: true
-})
+@Directive({ selector: '[ngxRepeat]' })
 export class NgxRepeatDirective {
-  @Input() public set ngxRepeat(count: number) {
-    for (let i = this.viewContainer.length; i > count; i--) this.viewContainer.remove(i - 1);
+  private readonly templateRef = inject<TemplateRef<RepeatDirectiveContext>>(TemplateRef);
+  private readonly viewContainer = inject(ViewContainerRef);
+  public readonly count = input.required<number>({ alias: 'ngxRepeat' });
 
-    for (let i = this.viewContainer.length; i < count; i++)
-      this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, count));
+  constructor() {
+    effect(() => {
+      const count = this.count();
+      for (let i = this.viewContainer.length; i > count; i--) this.viewContainer.remove(i - 1);
 
-    for (let i = 0; i < this.viewContainer.length; i++) {
-      const viewRef = this.viewContainer.get(i) as EmbeddedViewRef<RepeatDirectiveContext>;
-      viewRef.context.count = count;
-    }
+      for (let i = this.viewContainer.length; i < count; i++)
+        this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, count));
+
+      for (let i = 0; i < this.viewContainer.length; i++) {
+        const viewRef = this.viewContainer.get(i) as EmbeddedViewRef<RepeatDirectiveContext>;
+        viewRef.context.count = count;
+      }
+    });
   }
-
-  constructor(
-    private templateRef: TemplateRef<RepeatDirectiveContext>,
-    private viewContainer: ViewContainerRef
-  ) {}
 }
