@@ -85,7 +85,8 @@ import { NgxRepeatDirective } from 'ngx-repeat';
 
 | Angular   | ngx-repeat | Install                 |
 | --------- | ---------- | ----------------------- |
-| >= 19     | 3.x        | `yarn add ngx-repeat`   |
+| >= 20     | 4.x        | `yarn add ngx-repeat`   |
+| >= 19     | 3.x        | `yarn add ngx-repeat@3` |
 | >= 14     | 2.x        | `yarn add ngx-repeat@2` |
 | >= 12     | 1.x        | `yarn add ngx-repeat@1` |
 | >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
