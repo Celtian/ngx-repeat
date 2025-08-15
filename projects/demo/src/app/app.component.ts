@@ -4,9 +4,9 @@ import { VERSION } from '../environments/version';
 
 @Component({
   selector: 'app-root',
+  imports: [NgxRepeatDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [NgxRepeatDirective]
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   public title = 'ngx-repeat';
