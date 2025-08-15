@@ -4,12 +4,12 @@ import { NgxRepeatDirective } from './ngx-repeat.directive';
 
 describe('NgxRepeatDirective', () => {
   @Component({
+    imports: [NgxRepeatDirective],
     template: ` <div
       *ngxRepeat="3; let index = index; let even = even; let odd = odd; let first = first; let last = last"
     >
       {{ index }} {{ even }} {{ odd }} {{ first }} {{ last }}
-    </div>`,
-    imports: [NgxRepeatDirective]
+    </div>`
   })
   class TestDirectiveComponent {
     @ViewChild(NgxRepeatDirective) public directive?: NgxRepeatDirective;
