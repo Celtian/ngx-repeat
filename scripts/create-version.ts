@@ -7,18 +7,19 @@ const TAG = process.argv[3] || version;
 
 const VERSION = {
   TAG,
-  COMMIT_HASH
+  COMMIT_HASH,
 };
 
 const file = resolve(__dirname, '..', 'projects', 'demo', 'src', 'environments', 'version.ts');
 writeFileSync(
   file,
   `// IMPORTANT: THIS FILE IS AUTO GENERATED! DO NOT MANUALLY EDIT OR CHECKIN!
-/* eslint-disable */
 export const VERSION = ${JSON.stringify(VERSION, null, 4)};
-/* eslint-enable */
 `,
-  { encoding: 'utf-8' }
+  { encoding: 'utf-8' },
 );
 
-console.log('\x1b[34m', `- Wrote version ${version} info to ${relative(resolve(__dirname, '..'), file)}`);
+console.log(
+  '\x1b[34m',
+  `- Wrote version ${version} info to ${relative(resolve(__dirname, '..'), file)}`,
+);

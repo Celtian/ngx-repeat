@@ -1,4 +1,12 @@
-import { Directive, EmbeddedViewRef, TemplateRef, ViewContainerRef, effect, inject, input } from '@angular/core';
+import {
+  Directive,
+  EmbeddedViewRef,
+  TemplateRef,
+  ViewContainerRef,
+  effect,
+  inject,
+  input,
+} from '@angular/core';
 
 /**
  * @publicApi
@@ -6,7 +14,7 @@ import { Directive, EmbeddedViewRef, TemplateRef, ViewContainerRef, effect, inje
 export class RepeatDirectiveContext {
   constructor(
     public $implicit: number,
-    public count: number
+    public count: number,
   ) {}
 
   public get index(): number {
@@ -42,7 +50,10 @@ export class NgxRepeatDirective {
       for (let i = this.viewContainer.length; i > count; i--) this.viewContainer.remove(i - 1);
 
       for (let i = this.viewContainer.length; i < count; i++)
-        this.viewContainer.createEmbeddedView(this.templateRef, new RepeatDirectiveContext(i, count));
+        this.viewContainer.createEmbeddedView(
+          this.templateRef,
+          new RepeatDirectiveContext(i, count),
+        );
 
       for (let i = 0; i < this.viewContainer.length; i++) {
         const viewRef = this.viewContainer.get(i) as EmbeddedViewRef<RepeatDirectiveContext>;

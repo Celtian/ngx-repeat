@@ -1,104 +1,59 @@
-<p align="center">
-  <a href="https://github.com/Celtian/ngx-repeat" target="blank"><img src="assets/logo.svg?sanitize=true" alt="" width="120"></a>
-  <h1 align="center">NgxRepeat</h1>
-</p>
+# NgxRepeatNew
 
-[![npm version](https://badge.fury.io/js/ngx-repeat.svg)](https://badge.fury.io/js/ngx-repeat)
-[![Package License](https://img.shields.io/npm/l/ngx-repeat.svg)](https://www.npmjs.com/ngx-repeat)
-[![NPM Downloads](https://img.shields.io/npm/dm/ngx-repeat.svg)](https://www.npmjs.com/ngx-repeat)
-[![Snyk](https://snyk.io/advisor/npm-package/ngx-repeat/badge.svg)](https://snyk.io/advisor/npm-package/ngx-repeat)
-[![codecov](https://codecov.io/gh/Celtian/ngx-repeat/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-repeat/)
-[![stars](https://badgen.net/github/stars/celtian/ngx-repeat)](https://github.com/celtian/ngx-repeat/)
-[![forks](https://badgen.net/github/forks/celtian/ngx-repeat)](https://github.com/celtian/ngx-repeat/)
-[![HitCount](http://hits.dwyl.com/celtian/ngx-repeat.svg)](http://hits.dwyl.com/celtian/ngx-repeat)
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
 
-> Angular directive for repeating HTML element by count
+## Development server
 
-> ✓ _Angular 20 compatible_
+To start a local development server, run:
 
-Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-repeat) or [codesandbox live preview](https://codesandbox.io/s/ngx-repeat-bew8f)
-
-- Lightweight
-- No dependencies!
-- Directive way
-
-## 🛠️ Install
-
-1. Use yarn (or npm) to install the package
-
-```terminal
-yarn add ngx-repeat
+```bash
+ng serve
 ```
 
-2. Add NgxRepeatDirective into your component`
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-```typescript
-import { NgxRepeatDirective } from 'ngx-repeat';
+## Code scaffolding
 
-@Component({
-  standalone: true,
-  imports: [NgxRepeatDirective /*, ...*/],
-   // ...
-})
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
 ```
 
-or module
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```typescript
-import { NgxRepeatDirective } from 'ngx-repeat';
-
-@NgModule({
- // ...
- imports: [
-   // ...
-   NgxRepeatDirective
- ]
-})
+```bash
+ng generate --help
 ```
 
-## 🚀 Quick start
+## Building
 
-### Example code
+To build the project run:
 
-```html
-<div
-  *ngxRepeat="3; 
-    let index = index;
-    let even = even;
-    let odd = odd;
-    let first = first;
-    let last = last;"
->
-  {{ index }} {{ even }} {{ odd }} {{ first }} {{ last }}
-</div>
+```bash
+ng build
 ```
 
-### Result
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-```code
-  0 true false true false
-  1 false true false false
-  2 true false false true
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
 ```
 
-## 🔧 Compatibility
+## Running end-to-end tests
 
-| Angular   | ngx-repeat | Install                 |
-| --------- | ---------- | ----------------------- |
-| >= 20     | 4.x        | `yarn add ngx-repeat`   |
-| >= 19     | 3.x        | `yarn add ngx-repeat@3` |
-| >= 14     | 2.x        | `yarn add ngx-repeat@2` |
-| >= 12     | 1.x        | `yarn add ngx-repeat@1` |
-| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
+For end-to-end (e2e) testing, run:
 
-## 📦 Dependencies
+```bash
+ng e2e
+```
 
-_None_
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## 🪪 License
+## Additional Resources
 
-Copyright &copy; 2021 - 2025 [Dominik Hladik](https://github.com/Celtian)
-
-All contents are licensed under the [MIT license].
-
-[mit license]: LICENSE
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
