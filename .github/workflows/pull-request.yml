@@ -29,10 +29,15 @@ jobs:
         run: yarn check-circular-dependencies
 
       - name: 🧪 Run tests (ngx-repeat)
-        run: yarn test ngx-repeat
+        run: yarn test ngx-repeat --coverage
 
       - name: 🧪 Run tests (demo)
-        run: yarn test demo
+        run: yarn test demo --coverage
+
+      - name: 🧪 Report code coverage
+        uses: ./.github/actions/report-pr
+        with:
+          coverage-file: coverage/**/cobertura-coverage.xml
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
