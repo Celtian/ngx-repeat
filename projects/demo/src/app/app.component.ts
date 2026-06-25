@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgxRepeatDirective } from '../../../ngx-repeat/src/public-api';
 import { VERSION } from '../environments/version';
 
@@ -6,7 +6,8 @@ import { VERSION } from '../environments/version';
   selector: 'app-root',
   imports: [NgxRepeatDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   public title = 'ngx-repeat';

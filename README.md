@@ -14,7 +14,7 @@
 
 > Angular directive for repeating HTML element by count
 
-> ✓ _Angular 20 compatible_
+> ✓ _Angular 22 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live preview](https://stackblitz.com/edit/ngx-repeat) or [codesandbox live preview](https://codesandbox.io/s/ngx-repeat-bew8f)
 
@@ -85,7 +85,8 @@ import { NgxRepeatDirective } from 'ngx-repeat';
 
 | Angular   | ngx-repeat | Install                 |
 | --------- | ---------- | ----------------------- |
-| >= 20     | 4.x        | `yarn add ngx-repeat`   |
+| >= 22     | 5.x        | `yarn add ngx-repeat`   |
+| >= 20     | 4.x        | `yarn add ngx-repeat@4` |
 | >= 19     | 3.x        | `yarn add ngx-repeat@3` |
 | >= 14     | 2.x        | `yarn add ngx-repeat@2` |
 | >= 12     | 1.x        | `yarn add ngx-repeat@1` |
@@ -97,7 +98,7 @@ _None_
 
 ## 🪪 License
 
-Copyright &copy; 2021 - 2025 [Dominik Hladik](https://github.com/Celtian)
+Copyright &copy; 2021 - 2026 [Dominik Hladik](https://github.com/Celtian)
 
 All contents are licensed under the [MIT license].
 
