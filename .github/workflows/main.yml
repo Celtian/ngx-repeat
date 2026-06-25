@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+  packages: write
+
 jobs:
   install-and-build:
     name: 🛠️ Install & Build
