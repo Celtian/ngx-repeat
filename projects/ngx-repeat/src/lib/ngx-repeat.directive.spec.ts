@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, provideZonelessChangeDetection, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgxRepeatDirective } from './ngx-repeat.directive';
 
@@ -33,9 +33,10 @@ describe('NgxRepeatDirective', () => {
   let component: TestDirectiveComponent;
 
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({ imports: [NgxRepeatDirective, TestDirectiveComponent] }).createComponent(
-      TestDirectiveComponent
-    );
+    fixture = TestBed.configureTestingModule({
+      imports: [NgxRepeatDirective, TestDirectiveComponent],
+      providers: [provideZonelessChangeDetection()]
+    }).createComponent(TestDirectiveComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
   });
