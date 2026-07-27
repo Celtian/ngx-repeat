@@ -13,20 +13,20 @@ This file applies to the entire repository.
 ## Toolchain
 
 - Use the Node.js version declared in `.nvmrc`. Run `nvm install` and `nvm use` before project commands.
-- Use Yarn Classic; the exact package-manager version is declared in `package.json`.
-- Install dependencies with `yarn install --frozen-lockfile`.
-- Do not use npm to modify dependencies or generate a package lock.
+- Use Bun; the exact package-manager version is declared in `package.json`.
+- Install dependencies with `bun ci`.
+- Do not use npm or Yarn to modify dependencies or generate a lockfile.
 
 ## Common Commands
 
-- Start the demo: `yarn start`
-- Lint the workspace: `yarn lint`
-- Check circular dependencies: `yarn check-circular-dependencies`
-- Test the library: `yarn test ngx-repeat`
-- Test the demo: `yarn test demo`
-- Build the library: `yarn build`
-- Build the demo: `yarn build:demo`
-- Synchronize package metadata and the library README: `yarn script:sync-projects`
+- Start the demo: `bun run start`
+- Lint the workspace: `bun run lint`
+- Check circular dependencies: `bun run check-circular-dependencies`
+- Test the library: `bun run test ngx-repeat`
+- Test the demo: `bun run test demo`
+- Build the library: `bun run build`
+- Build the demo: `bun run build:demo`
+- Synchronize package metadata and the library README: `bun run script:sync-projects`
 
 Run the narrowest relevant checks while developing. Before handing off a source change, run lint and the
 affected tests. For packaging or public API changes, also build the library. Documentation-only changes do not
@@ -64,7 +64,7 @@ require a build unless they change executable examples or project commands.
 - Do not manually edit or commit `projects/demo/src/environments/version.ts`; `scripts/create-version.ts`
   generates it during `postinstall`.
 - Do not edit or commit generated build output under `dist` or coverage output under `coverage`.
-- The root `README.md` is copied to `projects/ngx-repeat/README.md` by `yarn script:sync-projects`. Update the root
+- The root `README.md` is copied to `projects/ngx-repeat/README.md` by `bun run script:sync-projects`. Update the root
   documentation first when installation, behavior, compatibility, or the public API changes.
 - Use the existing synchronization script for package versions and publish metadata instead of duplicating manual
   edits.

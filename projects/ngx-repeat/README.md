@@ -24,10 +24,10 @@ Here's the [demo](http://celtian.github.io/ngx-repeat/) or [stackblitz live prev
 
 ## 🛠️ Install
 
-1. Use yarn (or npm) to install the package
+1. Use Bun to install the package
 
 ```terminal
-yarn add ngx-repeat
+bun add ngx-repeat
 ```
 
 2. Add NgxRepeatDirective into your component`
@@ -83,14 +83,14 @@ import { NgxRepeatDirective } from 'ngx-repeat';
 
 ## 🔧 Compatibility
 
-| Angular   | ngx-repeat | Install                 |
-| --------- | ---------- | ----------------------- |
-| >= 22     | 5.x        | `yarn add ngx-repeat`   |
-| >= 20     | 4.x        | `yarn add ngx-repeat@4` |
-| >= 19     | 3.x        | `yarn add ngx-repeat@3` |
-| >= 14     | 2.x        | `yarn add ngx-repeat@2` |
-| >= 12     | 1.x        | `yarn add ngx-repeat@1` |
-| >= 5 < 13 | 0.x        | `yarn add ngx-repeat@0` |
+| Angular   | ngx-repeat | Install                |
+| --------- | ---------- | ---------------------- |
+| >= 22     | 5.x        | `bun add ngx-repeat`   |
+| >= 20     | 4.x        | `bun add ngx-repeat@4` |
+| >= 19     | 3.x        | `bun add ngx-repeat@3` |
+| >= 14     | 2.x        | `bun add ngx-repeat@2` |
+| >= 12     | 1.x        | `bun add ngx-repeat@1` |
+| >= 5 < 13 | 0.x        | `bun add ngx-repeat@0` |
 
 ## 📦 Dependencies
 
